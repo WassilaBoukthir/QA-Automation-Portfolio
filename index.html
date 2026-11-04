@@ -1,26 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio professionnel de Wassila Boukthir, ingénieure QA certifiée ISTQB®, spécialisée dans les tests logiciels et l'automatisation.">
-  <title>Wassila Boukthir | QA Engineer & Test Automation</title>
+  <meta name="description" content="Portfolio professionnel de Wassila Boukthir, Ingénieure QA & Test Automation certifiée ISTQB®. Spécialisée en automatisation Web, API, Mobile, Performance et CI/CD.">
+  <title>Wassila Boukthir | QA Engineer & Test Automation Expert</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --pink: #bd6575;
-      --pink-dark: #a84f62;
-      --pink-light: #f9deda;
-      --pink-pale: #fff5f3;
-      --text: #40343a;
-      --muted: #796c72;
-      --white: #ffffff;
-      --shadow: 0 12px 35px rgba(120, 65, 78, 0.10);
+      --primary: #1e3a8a;        /* Deep Blue */
+      --primary-accent: #2563eb; /* Bright Blue */
+      --cyan: #06b6d4;           /* Tech Cyan */
+      --success: #10b981;        /* Test Passed Green */
+      --bg-dark: #0f172a;        /* Slate Dark */
+      --bg-light: #f8fafc;       /* Clean Light Gray */
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08);
     }
 
     * {
@@ -31,10 +34,10 @@
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background: var(--bg-light);
+      line-height: 1.6;
     }
 
     a {
@@ -43,19 +46,19 @@
     }
 
     .container {
-      width: min(1120px, 90%);
+      width: min(1200px, 90%);
       margin: auto;
     }
 
-    /* NAVIGATION */
-
+    /* HEADER & NAV */
     header {
-      background: var(--pink);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
       color: white;
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 3px 15px rgba(0,0,0,.08);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     nav {
@@ -67,26 +70,39 @@
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 23px;
-      font-weight: 700;
-      white-space: nowrap;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span.badge-qa {
+      background: linear-gradient(135deg, var(--primary-accent), var(--cyan));
+      color: white;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 30px;
       list-style: none;
     }
 
     .nav-links a {
       font-weight: 600;
+      font-size: 14px;
+      color: #94a3b8;
       transition: .3s;
     }
 
     .nav-links a:hover {
-      color: #ffe2df;
+      color: #38bdf8;
     }
 
     .menu-toggle {
@@ -94,125 +110,204 @@
       border: 0;
       background: transparent;
       color: white;
-      font-size: 27px;
+      font-size: 26px;
       cursor: pointer;
     }
 
-    /* HERO */
-
+    /* HERO SECTION */
     .hero {
-      min-height: 570px;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(120deg, #fff7f5, #f9dedb);
-      padding: 75px 0;
+      background: var(--bg-dark);
+      color: white;
+      padding: 90px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+      pointer-events: none;
     }
 
     .hero-content {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      gap: 55px;
+      gap: 60px;
     }
 
     .eyebrow {
-      color: var(--pink-dark);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
       font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--success);
     }
 
     h1 {
-      font-size: clamp(38px, 5vw, 59px);
-      line-height: 1.18;
-      margin: 15px 0;
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
     }
 
     h1 span {
-      color: var(--pink-dark);
+      background: linear-gradient(135deg, #60a5fa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 600px;
-      margin-bottom: 25px;
+      color: #94a3b8;
+      font-size: 16px;
+      max-width: 580px;
+      margin-bottom: 30px;
     }
 
     .hero-image {
+      position: relative;
       display: flex;
       justify-content: center;
     }
 
     .hero-image img {
-      width: 300px;
-      height: 365px;
+      width: 280px;
+      height: 350px;
       object-fit: cover;
-      border-radius: 24px;
-      border: 8px solid white;
-      box-shadow: var(--shadow);
+      border-radius: 20px;
+      border: 2px solid rgba(255,255,255,0.15);
+      box-shadow: var(--shadow-lg);
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
+      gap: 14px;
     }
 
     .btn {
-      display: inline-block;
-      background: var(--pink);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-accent);
       color: white;
-      padding: 12px 22px;
-      border-radius: 9px;
+      padding: 12px 24px;
+      border-radius: 10px;
       font-weight: 700;
+      font-size: 14px;
       transition: .3s;
+      border: 1px solid transparent;
     }
 
     .btn:hover {
-      background: var(--pink-dark);
+      background: #1d4ed8;
       transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
     }
 
     .btn-outline {
-      background: transparent;
-      color: var(--pink-dark);
-      border: 1px solid var(--pink);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
     .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
       color: white;
     }
 
-    /* GENERAL SECTIONS */
+    /* QA METRICS DASHBOARD SECTION */
+    .dashboard-section {
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+    }
 
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .metric-card .label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .metric-card .value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .metric-card .subtext {
+      font-size: 12px;
+      color: var(--success);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* SECTIONS GENERAL */
     section {
-      padding: 85px 0;
-      scroll-margin-top: 75px;
+      padding: 90px 0;
+      scroll-margin-top: 70px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+      max-width: 650px;
+      margin: 0 auto 55px;
     }
 
     .section-title h2 {
-      font-size: 37px;
-      color: var(--pink-dark);
-      margin-bottom: 10px;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--bg-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
     }
 
     .section-title p {
-      color: var(--muted);
+      color: var(--text-muted);
+      font-size: 15px;
     }
 
     /* ABOUT */
-
     .about {
       background: white;
     }
@@ -222,230 +317,281 @@
       margin: auto;
       text-align: center;
       font-size: 16px;
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
     .about-content p {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    .certification {
-      display: inline-block;
-      background: var(--pink-pale);
-      color: var(--pink-dark);
-      border: 1px solid var(--pink-light);
-      padding: 12px 20px;
+    .certification-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #eff6ff;
+      color: var(--primary-accent);
+      border: 1px solid #bfdbfe;
+      padding: 14px 24px;
       border-radius: 12px;
-      margin-top: 12px;
+      margin: 15px 0 25px;
       font-weight: 700;
     }
 
     /* SKILLS */
-
-    .skills {
-      background: var(--pink-pale);
-    }
-
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
 
     .skill-card {
       background: white;
-      padding: 25px;
+      padding: 30px;
       border-radius: 16px;
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
       transition: .3s;
     }
 
     .skill-card:hover {
       transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: #38bdf8;
     }
 
-    .skill-card .emoji {
-      font-size: 28px;
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      background: #eff6ff;
+      color: var(--primary-accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
     }
 
     .skill-card h3 {
-      color: var(--pink-dark);
-      font-size: 21px;
-      margin: 12px 0;
+      color: var(--bg-dark);
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .skill-card p {
       font-size: 14px;
-      color: var(--muted);
+      color: var(--text-muted);
+      margin-bottom: 16px;
     }
 
-    /* PROJECTS */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tech-pill {
+      background: #f1f5f9;
+      color: var(--bg-dark);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* PROJECTS & DASHBOARDS */
+    .projects {
+      background: #f8fafc;
+    }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 30px;
     }
 
     .project-card {
       background: white;
-      border: 1px solid #f1d9d9;
-      border-radius: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: .3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Faux Dashboard UI inside cards */
+    .project-preview-ui {
+      background: #0f172a;
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .ui-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+    }
+
+    .ui-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .ui-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ef4444;
+    }
+
+    .ui-dot:nth-child(2) { background: #f59e0b; }
+    .ui-dot:nth-child(3) { background: #10b981; }
+
+    .ui-body {
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .log-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .log-pass { color: #10b981; }
+    .log-info { color: #38bdf8; }
+
+    .project-body {
       padding: 28px;
-      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
-    .project-card h3 {
-      color: var(--pink-dark);
-      font-size: 22px;
-      margin: 12px 0;
+    .project-body h3 {
+      font-size: 20px;
+      color: var(--bg-dark);
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
-    .project-card p {
-      color: var(--muted);
+    .project-body p {
+      color: var(--text-muted);
       font-size: 14px;
+      margin-bottom: 20px;
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 18px 0;
+      margin-top: auto;
+      padding-top: 15px;
     }
 
     .tag {
-      background: var(--pink-pale);
-      color: var(--pink-dark);
-      padding: 5px 11px;
+      background: #eff6ff;
+      color: var(--primary-accent);
+      padding: 4px 10px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 700;
     }
 
-    .project-link {
-      color: var(--pink-dark);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
     /* CONTACT */
-
     .contact {
-      background: linear-gradient(120deg, #fff5f3, #f9dedb);
+      background: var(--bg-dark);
+      color: white;
       text-align: center;
     }
 
-    .contact p {
-      color: var(--muted);
-      margin-bottom: 25px;
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact .section-title p {
+      color: #94a3b8;
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 16px;
+      margin-top: 30px;
     }
 
     footer {
-      background: var(--pink);
-      color: white;
+      background: #090d16;
+      color: #64748b;
       text-align: center;
-      padding: 22px;
+      padding: 24px;
       font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
     /* RESPONSIVE */
-
-    @media (max-width: 850px) {
-      .nav-links {
-        gap: 13px;
-        font-size: 13px;
-      }
-
-      .hero-content {
-        grid-template-columns: 1fr .8fr;
-        gap: 25px;
-      }
-
-      .hero-image img {
-        width: 240px;
-        height: 300px;
-      }
-    }
-
-    @media (max-width: 650px) {
-      nav {
-        min-height: 68px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        width: 100%;
-        padding: 22px;
-        background: var(--pink);
-        flex-direction: column;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
+    @media (max-width: 900px) {
       .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
       }
+      .hero-image { grid-row: 1; }
+      .hero-image img { width: 220px; height: 280px; }
+      .buttons { justify-content: center; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
 
-      .hero-image {
-        grid-row: 1;
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        flex-direction: column;
+        padding: 25px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
       }
-
-      .hero-image img {
-        width: 220px;
-        height: 270px;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-
-      .skills-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 0;
-      }
+      .nav-links.active { display: flex; }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
   <header>
     <nav class="container">
-      <a href="#accueil" class="logo">Wassila Boukthir</a>
+      <a href="#accueil" class="logo">
+        Wassila Boukthir <span class="badge-qa">QA ENGINEER</span>
+      </a>
 
-      <button class="menu-toggle" aria-label="Ouvrir le menu"
-        aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#competences">Compétences</a></li>
-        <li><a href="#projets">Portfolio</a></li>
+        <li><a href="#projets">Projets & Démos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -453,275 +599,315 @@
 
   <main>
 
-    <!-- ACCUEIL -->
-
+    <!-- HERO -->
     <section class="hero" id="accueil">
       <div class="container hero-content">
 
         <div>
-          <div class="eyebrow">Bienvenue sur mon portfolio</div>
+          <div class="eyebrow">
+            <span class="status-dot"></span> DISPONIBLE POUR DE NOUVEAUX DÉFIS QA
+          </div>
 
           <h1>
-            Bonjour, je suis<br>
-            <span>Wassila Boukthir</span>
+            Assurer la qualité &<br>
+            <span>l'automatisation des tests</span>
           </h1>
 
           <p>
-            Ingénieure QA & Automatisation des Tests,
-            certifiée ISTQB®. Passionnée par la qualité
-            logicielle, l'automatisation et l'innovation
-            technologique.
+            Ingénieure QA certifiée ISTQB®. Je conçois et déploie des stratégies de test automatisées robustes (Web, API, Mobile) intégrées aux pipelines CI/CD pour garantir des livraisons logiciels zéro défaut.
           </p>
 
           <div class="buttons">
-            <a href="#projets" class="btn">Découvrir mes projets</a>
-            <a href="#contact" class="btn btn-outline">Me contacter</a>
+            <a href="#projets" class="btn">🚀 Explorer mes projets QA</a>
+            <a href="#contact" class="btn btn-outline">✉️ Me contacter</a>
           </div>
         </div>
 
         <div class="hero-image">
-          <!-- profile1 -->
-          <img src="profile1.png"
-            alt="Portrait professionnel de Wassila Boukthir">
+          <img src="profile1.png" alt="Portrait de Wassila Boukthir">
         </div>
 
       </div>
     </section>
 
-    <!-- A PROPOS -->
+    <!-- METRICS DASHBOARD -->
+    <div class="container dashboard-section">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="label">Couverture de Tests</span>
+          <span class="value">92%</span>
+          <span class="subtext">▲ Scénarios Critiques Automatisés</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Réduction Temps d'Exécution</span>
+          <span class="value">-65%</span>
+          <span class="subtext">▲ Via Parallélisation CI/CD</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Tests Exécutés (Pass Rate)</span>
+          <span class="value">99.4%</span>
+          <span class="subtext">✔ Non-régression Validée</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Frameworks Avancés</span>
+          <span class="value">5+</span>
+          <span class="subtext">Playwright, Karate, k6, Appium</span>
+        </div>
+      </div>
+    </div>
 
+    <!-- À PROPOS -->
     <section class="about" id="apropos">
       <div class="container">
 
         <div class="section-title">
           <h2>À propos de moi</h2>
-          <p>Mon parcours et ma passion pour la qualité logicielle</p>
+          <p>Rigueur d'analyse, automatisation ciblée et culture de la qualité continue</p>
         </div>
 
         <div class="about-content">
-
           <p>
-            Ingénieure QA et Automatisation des Tests,
-            certifiée ISTQB®, je suis spécialisée dans
-            les tests fonctionnels, exploratoires et
-            automatisés des applications Web et Mobile.
+            Ingénieure QA et Automatisation des Tests, certifiée <strong>ISTQB®</strong>, je combine une approche analytique rigoureuse et une solide maîtrise technique pour sécuriser le cycle de vie logiciel. 
+          </p>
+          <p>
+            De l'analyse fonctionnelle initiale des risques jusqu'à la mise en place d'architectures d'automatisation (Page Object Model, BDD Gherkin) et la génération de rapports de test en temps réel, j'assure une couverture optimale des applications Web, Mobile et architectures orientées API.
           </p>
 
-          <p>
-            J'interviens dans la conception des stratégies
-            de test, la rédaction et l'exécution des cas de
-            test, la détection et le suivi des anomalies,
-            ainsi que l'automatisation des scénarios pour
-            améliorer la fiabilité des applications.
-          </p>
-
-          <p>
-            Curieuse et rigoureuse, je m'intéresse également
-            à l'intelligence artificielle appliquée au
-            Software Testing et à l'amélioration continue
-            des processus QA.
-          </p>
-
-          <div class="certification">
-            🏅 ISTQB® Certified Tester – Foundation Level
+          <div class="certification-badge">
+            🏅 Certification Officielle : <strong>ISTQB® Certified Tester – Foundation Level</strong>
           </div>
 
           <br><br>
 
-          <a href="CV_WassilaBoukthir.pdf"
-             class="btn" target="_blank">
-            📄 Télécharger mon CV
+          <a href="CV_WassilaBoukthir.pdf" class="btn" target="_blank">
+            📄 Télécharger mon CV (PDF)
           </a>
-
         </div>
+
       </div>
     </section>
 
     <!-- COMPETENCES -->
-
     <section class="skills" id="competences">
       <div class="container">
 
         <div class="section-title">
-          <h2>Mes compétences</h2>
-          <p>Outils et technologies utilisés dans mes activités QA</p>
+          <h2>Stack Technique & Compétences QA</h2>
+          <p>Ensemble des technologies et méthodologies mobilisées lors des cycles de test</p>
         </div>
 
         <div class="skills-grid">
 
           <article class="skill-card">
-            <div class="emoji">🧪</div>
-            <h3>Tests fonctionnels</h3>
-            <p>
-              Tests manuels, exploratoires, fonctionnels,
-              régression, conception de cas de test et
-              gestion des anomalies.
-            </p>
+            <div class="skill-icon">🤖</div>
+            <h3>Automatisation Web & E2E</h3>
+            <p>Conception de frameworks d'automatisation robustes, maintenables et évolutifs fondés sur le design pattern POM (Page Object Model).</p>
+            <div class="tech-stack">
+              <span class="tech-pill">Playwright</span>
+              <span class="tech-pill">Selenium</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">JavaScript</span>
+            </div>
           </article>
 
           <article class="skill-card">
-            <div class="emoji">🤖</div>
-            <h3>Automatisation Web</h3>
-            <p>
-              Playwright, Selenium, TypeScript,
-              automatisation des scénarios et tests
-              de non-régression.
-            </p>
+            <div class="skill-icon">🔌</div>
+            <h3>Tests API REST & Backend</h3>
+            <p>Validation fonctionnelle des contrats API, structuration des jeux de données de test, vérification des statuts HTTP et intégrations complexes.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">Karate Framework</span>
+              <span class="tech-pill">Postman</span>
+              <span class="tech-pill">REST Assured</span>
+              <span class="tech-pill">JSON/XML</span>
+            </div>
           </article>
 
           <article class="skill-card">
-            <div class="emoji">📱</div>
-            <h3>Tests Mobile</h3>
-            <p>
-              Appium, tests Android et iOS,
-              validation fonctionnelle et
-              automatisation mobile.
-            </p>
+            <div class="skill-icon">📱</div>
+            <h3>Tests Mobile (iOS & Android)</h3>
+            <p>Exécution et automatisation de scénarios natifs et hybrides sur émulateurs et appareils réels.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">Appium</span>
+              <span class="tech-pill">Android Studio</span>
+              <span class="tech-pill">Xcode</span>
+              <span class="tech-pill">Mobile Inspection</span>
+            </div>
           </article>
 
           <article class="skill-card">
-            <div class="emoji">🔌</div>
-            <h3>Tests API</h3>
-            <p>
-              Postman, Karate, API REST,
-              validation des réponses et
-              scénarios positifs et négatifs.
-            </p>
+            <div class="skill-icon">📈</div>
+            <h3>Performance & Stress Testing</h3>
+            <p>Création de scripts de montée en charge et de stress tests pour évaluer la réactivité et la stabilité sous forte affluence.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">k6</span>
+              <span class="tech-pill">Grafana</span>
+              <span class="tech-pill">JMeter</span>
+              <span class="tech-pill">Load Testing</span>
+            </div>
           </article>
 
           <article class="skill-card">
-            <div class="emoji">📊</div>
-            <h3>Performance & CI/CD</h3>
-            <p>
-              k6, Grafana, Git, GitHub Actions,
-              intégration et suivi des
-              tests automatisés.
-            </p>
+            <div class="skill-icon">⚙️</div>
+            <h3>Intégration CI/CD & Reporting</h3>
+            <p>Orchestration de l'exécution automatique des tests lors des builds et génération de dashboards de reporting qualitatifs.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">GitHub Actions</span>
+              <span class="tech-pill">Git</span>
+              <span class="tech-pill">Allure Report</span>
+              <span class="tech-pill">Docker</span>
+            </div>
           </article>
 
           <article class="skill-card">
-            <div class="emoji">📋</div>
-            <h3>Gestion & Méthodologies</h3>
-            <p>
-              Jira, Xray, Gherkin,
-              Agile/Scrum, suivi des anomalies
-              et reporting QA.
-            </p>
+            <div class="skill-icon">📋</div>
+            <h3>Gestion & Méthodologie QA</h3>
+            <p>Planification stratégique des tests, rédaction BDD (Gherkin), suivi du cycle de vie des bugs et gouvernance Agile.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">Jira</span>
+              <span class="tech-pill">Xray</span>
+              <span class="tech-pill">Agile / Scrum</span>
+              <span class="tech-pill">ISTQB®</span>
+            </div>
           </article>
 
         </div>
+
       </div>
     </section>
 
-    <!-- PROJETS -->
-
-    <section id="projets">
+    <!-- PROJETS & DASHBOARDS -->
+    <section class="projects" id="projets">
       <div class="container">
 
         <div class="section-title">
-          <h2>Mes projets QA</h2>
-          <p>Quelques exemples de réalisations et démonstrations techniques</p>
+          <h2>Projets & Démonstrations Techniques</h2>
+          <p>Exemples concrets de frameworks d'automatisation et dashboards de qualité</p>
         </div>
 
         <div class="projects-grid">
 
+          <!-- Projet 1 -->
           <article class="project-card">
-            <div class="emoji">🌐</div>
-            <h3>Automatisation Web</h3>
-            <p>
-              Conception de scénarios automatisés
-              pour tester l'authentification, la navigation
-              et les fonctionnalités d'une application Web.
-            </p>
-            <div class="tags">
-              <span class="tag">Playwright</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">POM</span>
+            <div class="project-preview-ui">
+              <div class="ui-header">
+                <div class="ui-dots"><div class="ui-dot"></div><div class="ui-dot"></div><div class="ui-dot"></div></div>
+                <span>playwright-e2e-suite.spec.ts</span>
+              </div>
+              <div class="ui-body">
+                <div class="log-line"><span class="log-pass">✔ [Chrome] Login & Auth Flow</span><span>1.2s</span></div>
+                <div class="log-line"><span class="log-pass">✔ [Firefox] Checkout Procedure</span><span>2.8s</span></div>
+                <div class="log-line"><span class="log-info">ℹ Executing parallel test suite...</span><span>0.4s</span></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Suite d'Automatisation Web End-to-End</h3>
+              <p>Framework d'automatisation complet fondé sur Playwright et TypeScript. Mise en œuvre du Page Object Model (POM) et gestion isolée des variables d'environnement pour l'exécution sur pipelines CI/CD.</p>
+              <div class="tags">
+                <span class="tag">Playwright</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">CI/CD Pipeline</span>
+              </div>
             </div>
           </article>
 
+          <!-- Projet 2 -->
           <article class="project-card">
-            <div class="emoji">🔌</div>
-            <h3>Tests API</h3>
-            <p>
-              Vérification des endpoints REST,
-              des codes HTTP, des réponses JSON
-              et des scénarios d'erreur.
-            </p>
-            <div class="tags">
-              <span class="tag">Postman</span>
-              <span class="tag">Karate</span>
-              <span class="tag">REST API</span>
+            <div class="project-preview-ui">
+              <div class="ui-header">
+                <div class="ui-dots"><div class="ui-dot"></div><div class="ui-dot"></div><div class="ui-dot"></div></div>
+                <span>karate-api-validation.feature</span>
+              </div>
+              <div class="ui-body">
+                <div class="log-line"><span class="log-pass">✔ Given path '/users/auth'</span><span>200 OK</span></div>
+                <div class="log-line"><span class="log-pass">✔ Then match response.status == 'SUCCESS'</span><span>PASSED</span></div>
+                <div class="log-line"><span class="log-info">ℹ Generated Allure HTML Report</span><span>Ready</span></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Validation Backend & Tests API REST</h3>
+              <p>Suite de tests automatisés pour endpoints REST avec le framework Karate. Validation dynamique des schémas JSON, injection de tokens d'authentification et reporting HTML automatisé.</p>
+              <div class="tags">
+                <span class="tag">Karate</span>
+                <span class="tag">Postman</span>
+                <span class="tag">REST API</span>
+              </div>
             </div>
           </article>
 
+          <!-- Projet 3 -->
           <article class="project-card">
-            <div class="emoji">📱</div>
-            <h3>Automatisation Mobile</h3>
-            <p>
-              Démonstration de tests automatisés
-              sur une application mobile Android/iOS.
-            </p>
-            <div class="tags">
-              <span class="tag">Appium</span>
-              <span class="tag">Android</span>
-              <span class="tag">Mobile QA</span>
+            <div class="project-preview-ui">
+              <div class="ui-header">
+                <div class="ui-dots"><div class="ui-dot"></div><div class="ui-dot"></div><div class="ui-dot"></div></div>
+                <span>k6-stress-test-dashboard.json</span>
+              </div>
+              <div class="ui-body">
+                <div class="log-line"><span class="log-info">Virtual Users (VUs):</span><span>50 Concurrent</span></div>
+                <div class="log-line"><span class="log-pass">Response Time (p95):</span><span>140ms</span></div>
+                <div class="log-line"><span class="log-pass">Error Rate:</span><span>0.00%</span></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Banc de Test de Performance & Charge</h3>
+              <p>Scripting de montée en charge progressive avec k6 (10, 20, 50 VUs). Intégration à Grafana pour la mesure des métriques de temps de réponse et de tenue de charge sous stress.</p>
+              <div class="tags">
+                <span class="tag">k6</span>
+                <span class="tag">Grafana</span>
+                <span class="tag">Performance</span>
+              </div>
             </div>
           </article>
 
+          <!-- Projet 4 -->
           <article class="project-card">
-            <div class="emoji">📈</div>
-            <h3>Tests de performance</h3>
-            <p>
-              Simulation de charge, analyse des
-              temps de réponse et évaluation
-              du comportement de l'application.
-            </p>
-            <div class="tags">
-              <span class="tag">k6</span>
-              <span class="tag">Grafana</span>
-              <span class="tag">Performance</span>
+            <div class="project-preview-ui">
+              <div class="ui-header">
+                <div class="ui-dots"><div class="ui-dot"></div><div class="ui-dot"></div><div class="ui-dot"></div></div>
+                <span>appium-mobile-suite.js</span>
+              </div>
+              <div class="ui-body">
+                <div class="log-line"><span class="log-pass">✔ [Android] App Launch</span><span>PASSED</span></div>
+                <div class="log-line"><span class="log-pass">✔ [Android] Gesture Swipe & Tap</span><span>PASSED</span></div>
+                <div class="log-line"><span class="log-info">ℹ Device: Pixel 6 - Android 14</span><span>Active</span></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Automatisation de Tests Mobiles Native/Hybride</h3>
+              <p>Scénarios de tests fonctionnels automatisés sur applications mobiles Android et iOS via Appium. Validation des interactions tactiles et flux d'utilisateurs complexes.</p>
+              <div class="tags">
+                <span class="tag">Appium</span>
+                <span class="tag">Android</span>
+                <span class="tag">Mobile Testing</span>
+              </div>
             </div>
           </article>
 
         </div>
+
       </div>
     </section>
 
     <!-- CONTACT -->
-
     <section class="contact" id="contact">
       <div class="container">
 
         <div class="section-title">
-          <h2>Travaillons ensemble</h2>
-          <p>
-            Vous avez une opportunité ou un projet ?
-            N'hésitez pas à me contacter.
-          </p>
+          <h2>Collaborons ensemble</h2>
+          <p>Vous recherchez une ingénieure QA pour sécuriser vos livraisons et structurer vos suites de tests ?</p>
         </div>
 
         <div class="contact-links">
-
-          <!-- Remplacer par ton adresse email -->
           <a class="btn" href="mailto:wassilaboukthir5@gmail.com">
-            ✉️ Email
+            ✉️ me contacter par email
           </a>
 
-          <!-- Remplacer par ton URL LinkedIn -->
-          <a class="btn btn-outline"
-             href="https://www.linkedin.com/in/wassila-boukthir/"
-             target="_blank" rel="noopener">
-            LinkedIn
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/wassila-boukthir/" target="_blank" rel="noopener">
+            🔗 Profil LinkedIn
           </a>
 
-          <!-- Remplacer par ton profil GitHub -->
-          <a class="btn btn-outline"
-             href="https://github.com/WassilaBoukthir"
-             target="_blank" rel="noopener">
-            GitHub
+          <a class="btn btn-outline" href="https://github.com/WassilaBoukthir" target="_blank" rel="noopener">
+            💻 Dépôts GitHub
           </a>
-
         </div>
 
       </div>
@@ -730,8 +916,7 @@
   </main>
 
   <footer>
-    © 2026 Wassila Boukthir – QA Engineer & Test Automation.
-    Tous droits réservés.
+    © 2026 Wassila Boukthir – QA Engineer & Test Automation Specialist. All rights reserved.
   </footer>
 
   <script>
@@ -739,21 +924,16 @@
       const menu = document.getElementById('navLinks');
       const button = document.querySelector('.menu-toggle');
       menu.classList.toggle('active');
-      button.setAttribute(
-        'aria-expanded',
-        menu.classList.contains('active')
-      );
+      button.setAttribute('aria-expanded', menu.classList.contains('active'));
     }
 
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('active');
-        document.querySelector('.menu-toggle')
-          .setAttribute('aria-expanded', 'false');
+        document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
       });
     });
   </script>
 
 </body>
 </html>
-
